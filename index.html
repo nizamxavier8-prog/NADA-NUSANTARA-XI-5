@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NadaNusantara - Musik Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <h1>Nada<span>Nusantara</span></h1>
+            </div>
+            
+            <div class="menu">
+                <a href="#" class="menu-item active" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Beranda</span>
+                </a>
+                <a href="#" class="menu-item" data-page="explore">
+                    <i class="fas fa-search"></i>
+                    <span>Jelajahi</span>
+                </a>
+                <a href="#" class="menu-item" data-page="collection">
+                    <i class="fas fa-book"></i>
+                    <span>Koleksi</span>
+                </a>
+                <a href="#" class="menu-item" data-page="favorites">
+                    <i class="fas fa-heart"></i>
+                    <span>Favorit</span>
+                </a>
+            </div>
+            
+            <div class="playlists">
+                <h3>PLAYLIST</h3>
+                <div class="playlist-item">Lagu Daerah</div>
+                <div class="playlist-item">Musik Tradisional</div>
+                <div class="playlist-item">Dangdut Koplo</div>
+                <div class="playlist-item">Keroncong Asli</div>
+                <div class="playlist-item">Pop Indonesia</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="nav-buttons">
+                    <button class="nav-btn" id="backBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn" id="forwardBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cari lagu atau artis..." id="searchInput">
+                </div>
+                
+                <div class="user-profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                    <span>User</span>
+                </div>
+            </div>
+
+            <!-- Content Pages -->
+            <div class="content-area">
+                <!-- Home Page -->
+                <div class="page active" id="home-page">
+                    <div class="greeting">
+                        <h1 id="greetingText">Selamat Datang</h1>
+                        <p>Nikmati musik tradisional dan modern Indonesia</p>
+                    </div>
+
+                    <!-- Trending Section -->
+                    <div class="section">
+                        <h2>Trending Sekarang</h2>
+                        <div class="song-grid" id="trendingSongs">
+                            <!-- Songs will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Traditional Section -->
+                    <div class="section">
+                        <h2>Musik Tradisional</h2>
+                        <div class="song-grid" id="traditionalSongs">
+                            <!-- Songs will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Modern Section -->
+                    <div class="section">
+                        <h2>Musik Modern</h2>
+                        <div class="song-grid" id="modernSongs">
+                            <!-- Songs will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explore Page -->
+                <div class="page" id="explore-page">
+                    <h1>Jelajahi Musik</h1>
+                    <div class="genre-grid">
+                        <div class="genre-card" data-genre="tradisional">
+                            <i class="fas fa-drum"></i>
+                            <h3>Tradisional</h3>
+                            <p>Lagu daerah klasik</p>
+                        </div>
+                        <div class="genre-card" data-genre="dangdut">
+                            <i class="fas fa-guitar"></i>
+                            <h3>Dangdut</h3>
+                            <p>Musik populer Indonesia</p>
+                        </div>
+                        <div class="genre-card" data-genre="pop">
+                            <i class="fas fa-microphone"></i>
+                            <h3>Pop</h3>
+                            <p>Musik pop Indonesia</p>
+                        </div>
+                        <div class="genre-card" data-genre="keroncong">
+                            <i class="fas fa-guitar"></i>
+                            <h3>Keroncong</h3>
+                            <p>Musik khas Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="songs-list" id="exploreSongs">
+                        <!-- Explore songs will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Collection Page -->
+                <div class="page" id="collection-page">
+                    <h1>Koleksi Anda</h1>
+                    <div class="songs-list" id="collectionList">
+                        <!-- Collection songs will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Favorites Page -->
+                <div class="page" id="favorites-page">
+                    <h1>Favorit Anda</h1>
+                    <div class="songs-list" id="favoritesList">
+                        <!-- Favorite songs will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player -->
+    <div class="player">
+        <div class="now-playing">
+            <img src="https://asset.kompas.com/crops/Kf36nc3c0RBfm4N7a3jfRdeiQ0A=/121x6:1000x592/750x500/data/photo/2022/02/18/620fa8b6a8b86.jpg" alt="Cover" id="currentCover">
+            <div class="song-info">
+                <h4 id="currentTitle">Gambang Suling</h4>
+                <p id="currentArtist">Ki Nartosabdo</p>
+            </div>
+            <button class="like-btn" id="likeBtn">
+                <i class="far fa-heart"></i>
+            </button>
+        </div>
+        
+        <div class="player-controls">
+            <div class="controls">
+                <button class="control-btn" id="shuffleBtn">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button class="control-btn" id="prevBtn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="play-btn" id="playBtn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn" id="nextBtn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button class="control-btn" id="repeatBtn">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+            <div class="progress">
+                <span id="currentTime">0:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span id="duration">3:45</span>
+            </div>
+        </div>
+        
+        <div class="volume">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" min="0" max="100" value="70" id="volumeSlider">
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <!-- Hidden audio element -->
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
